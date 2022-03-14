@@ -34,7 +34,10 @@ Constraints:
 
     -231 <= x <= 231 - 1
 
+Follow up: Could you solve it without converting the integer to a string?
 """
+
+
 def palindrome_number(x: int) -> bool:
     if x in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:
         return True
@@ -51,5 +54,8 @@ def palindrome_number(x: int) -> bool:
     else:
         return False
 
+
 if __name__ == '__main__':
-    print(palindrome_number(101))
+    value = 101
+    result = palindrome_number(101)
+    print(value, result)
