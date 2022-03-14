@@ -37,11 +37,9 @@ Constraints:
 Follow up: Could you solve it without converting the integer to a string?
 """
 
-
+# 76 ms
 def palindrome_number(x: int) -> bool:
-    if x in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:
-        return True
-    elif x > 10:
+    if x > 10:
         values = []
         while True:
             if x // 10:
@@ -51,8 +49,9 @@ def palindrome_number(x: int) -> bool:
                 values.append(x % 10)
                 break
         return values == values[::-1]
-    else:
-        return False
+    if 0 <= x <= 9:
+        return True
+    return False
 
 
 if __name__ == '__main__':
