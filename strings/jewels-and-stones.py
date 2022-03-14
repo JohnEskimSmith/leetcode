@@ -26,24 +26,35 @@ Constraints:
 
 """
 
-def jewels_and_stones(jewels: str, stones: str) -> int:
+
+#24 ms
+def jewels_and_stones_1(jewels: str, stones: str) -> int:
     return sum(1 for s in stones if s in jewels)
 
 
+# 49 ms
+def jewels_and_stones_2(jewels: str, stones: str) -> int:
+    value = 0
+    for j in jewels:
+        i = 0
+        size = len(stones)
+        while i < size:
+            if j == stones[i]:
+                size -= 1
+                value += 1
+                stones = stones[:i]+stones[i+1:]
+                i -= 1
+            i += 1
+    return value
+
+
 if __name__ == '__main__':
-    result = jewels_and_stones(jewels="z", stones="ZZ")
+    result = jewels_and_stones_2(jewels = "aA", stones = "aAAbbbb")
+    print(result)
+    result = jewels_and_stones_2(jewels = "z", stones = "ZZ")
     print(result)
 
-
-"""
-Time Submitted
-	
-Status
-	
-Runtime
-	
-Memory
-	
-Language
-03/14/2022 19:32	Accepted	24 ms	13.9 MB	python3
-"""
+    result = jewels_and_stones_1(jewels = "aA", stones = "aAAbbbb")
+    print(result)
+    result = jewels_and_stones_1(jewels = "z", stones = "ZZ")
+    print(result)
