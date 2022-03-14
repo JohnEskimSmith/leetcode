@@ -72,7 +72,6 @@ def remove_element_my(nums: list[int], val: int) -> int:
         if nums[i] != val:
             k += 1
         else:
-            j = i
             for j in range(i, lenght_nums-1):
                 nums[j] = nums[j+1]
                 j += 1
