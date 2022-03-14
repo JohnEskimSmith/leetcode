@@ -59,7 +59,7 @@ Constraints:
 # 63 ms
 def remove_element_my(nums: list[int], val: int) -> int:
     """
-    now good solution
+    not good solution
     :param nums:
     :param val:
     :return:
